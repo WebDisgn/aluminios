@@ -6,7 +6,7 @@
 body {
 	font-family: 'Roboto', sans-serif;
 	background-image: linear-gradient(rgba(5, 7, 12, 0.75),rgba(5, 7, 12, 0.75)), 
-	url('../img/fondo.jpg');
+	url('../img/fondo.png');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-attachment: fixed;
