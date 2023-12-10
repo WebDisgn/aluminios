@@ -2,118 +2,184 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Datos de la Base de Datos Firebase</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Datos de la Base de Datos Firebase</title>
 
 
-    
-    <!-- STYLES TEXTT CSS ////////////////////////////////////////////////////////////////// -->
-    <!-- Enlaza los archivos de los estilos y scripts -->
-    <link rel="stylesheet" href="CSS/customCss/styles.css">
-    <link rel="stylesheet" href="CSS/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="CSS/responsiveDatatables/jquery.dataTables.min.css">
-      <!-- Enlaza el archivo CSS de la extensión Responsive -->
-    <link rel="stylesheet" type="text/css" href="CSS/responsiveDatatables/responsive.min.css">
 
-    <link rel="stylesheet" href="dropzonejs/CSS/basic.css">
-    <link rel="stylesheet" href="dropzonejs/CSS/styles.css">
-    <!--///////////////////////////////////////////////////////////////////////////////////// -->
-  
+  <!-- STYLES TEXTT CSS ////////////////////////////////////////////////////////////////// -->
+  <!-- Enlaza los archivos de los estilos y scripts -->
+  <link rel="stylesheet" href="CSS/customCss/styles.css">
+  <link rel="stylesheet" href="CSS/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="CSS/responsiveDatatables/jquery.dataTables.min.css">
+  <!-- Enlaza el archivo CSS de la extensión Responsive -->
+  <link rel="stylesheet" type="text/css" href="CSS/responsiveDatatables/responsive.min.css">
+
+  <link rel="stylesheet" href="dropzonejs/CSS/basic.css">
+  <link rel="stylesheet" href="dropzonejs/CSS/styles.css">
+  <!--///////////////////////////////////////////////////////////////////////////////////// -->
+
 </head>
 
 <body>
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark rounded" aria-label="Ejemplo de barra de navegación">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11"
+        aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-
-
-    <div>
-        <h2>Formulario CRUD de Usuarios</h2>
-
-        <form id="usuarioForm">
-            <label for="id">id:</label>
-            <input type="text" name="id" id="id"><br>
-
-            <label for="nombres">Nombres:</label>
-            <input type="text" id="nombres" required><br>
-
-            <label for="apellidos">Apellidos:</label>
-            <input type="text" id="apellidos" required><br>
-
-            <label for="correo">Correo electrónico:</label>
-            <input type="email" id="correo" required><br>
-
-            <label for="calle_principal">Calle Principal:</label>
-            <input type="text" id="calle_principal" required><br>
-
-            <label for="calle_secundaria">Calle Secundaria:</label>
-            <input type="text" id="calle_secundaria" required><br>
-
-            <label for="telefono">Teléfono:</label>
-            <input type="tel" id="telefono" required><br>
-
-            <button type="button" id="btn_crear">Crear Usuario</button>
-            <button type="button" id="btn_leer">Mostrar Detalles</button>
-            <button type="button" id="btn_actulizar">Actualizar Usuario</button>
-            <button type="button" id="btn_eliminar">Eliminar Usuario</button>
-        </form>
-
-        <div id="resultado"></div>
+      <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
+        <a class="navbar-brand col-lg-3 me-0" href="#">Centered nav</a>
+        <ul class="navbar-nav col-lg-6 justify-content-lg-center">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="d-lg-flex col-lg-3 justify-content-lg-end">
+          <button class="btn btn-primary">Button</button>
+        </div>
+      </div>
     </div>
+  </nav>
+
+
+  <div class="col-md-10 mx-auto col-lg-5 w-100">
+    <h1 class="h1">Formulario CRUD de Usuarios</h1>
+
+    <form id="usuarioForm" class="p-4 p-md-5 border rounded-3 bg-body-tertiary w-100">
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="id" class="form-label">ID:</label>
+          <input type="text" class="form-control" id="id">
+        </div>
+
+        <div class="col-md-6">
+          <label for="nombres" class="form-label">Nombres:</label>
+          <input type="text" class="form-control" id="nombres" required>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="apellidos" class="form-label">Apellidos:</label>
+          <input type="text" class="form-control" id="apellidos" required>
+        </div>
+
+        <div class="col-md-6">
+          <label for="correo" class="form-label">Correo electrónico:</label>
+          <input type="email" class="form-control" id="correo" required>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="calle_principal" class="form-label">Calle Principal:</label>
+          <input type="text" class="form-control" id="calle_principal" required>
+        </div>
+
+        <div class="col-md-6">
+          <label for="calle_secundaria" class="form-label">Calle Secundaria:</label>
+          <input type="text" class="form-control" id="calle_secundaria" required>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="telefono" class="form-label">Teléfono:</label>
+        <input type="tel" class="form-control" id="telefono" required>
+      </div>
+
+
+
+      <button class="btn btn-primary rounded-pill px-3 m-2" type="button">Primary</button>
+      <button class="btn btn-secondary rounded-pill px-3 m-2" type="button">Secondary</button>
+      <button class="btn btn-success rounded-pill px-3 m-2" type="button">Success</button>
+      <button class="btn btn-danger rounded-pill px-3 m-2" type="button">Danger</button>
+      <button class="btn btn-warning rounded-pill px-3 m-2" type="button">Warning</button>
+      <button class="btn btn-info rounded-pill px-3 m-2" type="button">Info</button>
+      <button class="btn btn-light rounded-pill px-3 m-2" type="button">Light</button>
+      <button class="btn btn-dark rounded-pill px-3 m-2" type="button">Dark</button>
+      <button class="btn btn-link rounded-pill px-3 m-2" type="button">Link</button>
+
+
+  </div>
+  <div id="resultado"></div>
+
+  </div>
+  </form>
+  </div>
 
 
 
 
-    <div class="datatables">
-        <h2>Datos de la Base de Datos Firebase</h2>
-
-        <table id="tablaDatos">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Apellidos</th>
-                    <th>Correo</th>
-                    <th>Calle Principal</th>
-                    <th>Calle Secundaria</th>
-                    <th>Nombres</th>
-                    <th>Teléfono</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Los datos se llenarán aquí mediante JavaScript -->
-            </tbody>
-        </table>
-    </div>
-    <div class="datos"></div>
 
 
+  <div class="datatables">
+    <h2 class="h2">Datos de la Base de Datos Firebase</h2>
 
-    
-   
+    <table id="tablaDatos">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Apellidos</th>
+          <th>Correo</th>
+          <th>Calle Principal</th>
+          <th>Calle Secundaria</th>
+          <th>Nombres</th>
+          <th>Teléfono</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Los datos se llenarán aquí mediante JavaScript -->
+      </tbody>
+    </table>
+  </div>
+  <div class="datos"></div>
 
 
 
-    	
-    <!-- SCRIPTS JS /////////////////////////////////////////////////////////////////////////-->
-    
-    <script src="JS/jquery.min.js"></script>
-    <script src="JS/popper/popper.min.js"></script> 
-    <script src="JS/bootstrap.min.js"></script> 
-    <script src="JS/jquery.dataTables.min.js"></script>
-    <script src="JS/dataTables.buttons.min.js"></script>
-    <script src="JS/buttons.html5.min.js"></script>
-    <script src="JS/print/pdfmake.min.js"></script> 
-    <script src="JS/print/vfs_fonts.js"></script>  
-    <script src="JS/buttons.print.min.js"></script>
-     <!-- Enlaza el archivo JavaScript de la extensión Responsive -->
-    <script src="CSS/responsiveDatatables/responsive.min.js"></script>
-    <script src="dropzonejs/JS/dropzone-min.js"></script>
-    <script src="dropzonejs/JS/app.js"></script>
 
-    
-    <script src="jsa/Usuarios.js"></script>
-   
-     <!--///////////////////////////////////////////////////////////////////////////////////// --> 
+
+
+
+
+
+  <!-- SCRIPTS JS /////////////////////////////////////////////////////////////////////////-->
+
+  <script src="JS/jquery.min.js"></script>
+  <script src="JS/popper/popper.min.js"></script>
+  <script src="JS/bootstrap.min.js"></script>
+  <script src="JS/jquery.dataTables.min.js"></script>
+  <script src="JS/dataTables.buttons.min.js"></script>
+  <script src="JS/buttons.html5.min.js"></script>
+  <script src="JS/print/pdfmake.min.js"></script>
+  <script src="JS/print/vfs_fonts.js"></script>
+  <script src="JS/buttons.print.min.js"></script>
+  <!-- Enlaza el archivo JavaScript de la extensión Responsive -->
+  <script src="CSS/responsiveDatatables/responsive.min.js"></script>
+  <script src="dropzonejs/JS/dropzone-min.js"></script>
+  <script src="dropzonejs/JS/app.js"></script>
+
+
+  <script src="jsa/Usuarios.js"></script>
+
+  <!--///////////////////////////////////////////////////////////////////////////////////// -->
 </body>
 
 </html>

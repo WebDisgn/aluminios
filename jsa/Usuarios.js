@@ -36,6 +36,7 @@ class Usuario {
                     dom: 'Bfrtip',
                     buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
                 });
+               
             },
             error: function (error) {
                 console.error('Error al obtener los datos:', error.message);
@@ -68,28 +69,27 @@ class Usuario {
         }
     }
 
-    // Método para capturar los datos de la fila al hacer clic
-    static capturarDatos(id) {
-        const fila = document.getElementById(`fila-${id}`);
-        const celdas = fila.getElementsByTagName('td');
-
-        const datosCapturados = {
-            id: celdas[0].textContent,
-            apellidos: celdas[1].textContent,
-            correo: celdas[2].textContent,
-            calle_principal: celdas[3].textContent,
-            calle_secundaria: celdas[4].textContent,
-            nombres: celdas[5].textContent,
-            telefono: celdas[6].textContent,
+    // Método para seleccionar una fila y resaltarla
+    static seleccionarFila() {
+        // Lógica para resaltar la fila
+        const resaltarFila = function () {
+            if ($(this).hasClass('resaltada')) {
+                $(this).removeClass('resaltada');
+            } else {
+                $('#tablaDatos').DataTable().$('tr.resaltada').removeClass('resaltada');
+                $(this).addClass('resaltada');
+            }
         };
 
-        console.log('Datos capturados:', datosCapturados);
-
-        // Puedes hacer lo que necesites con los datos capturados aquí
+        return resaltarFila;
     }
 
     // Resto de la clase (otros métodos, etc.)
 }
 
+
+//EVENTOS
 // Llamar al método estático para obtener y mostrar los datos
 Usuario.obtenerYMostrarDatos();
+// Asignar el evento click a las filas
+$('#tablaDatos tbody').on('click', 'tr', Usuario.seleccionarFila());
